@@ -37,10 +37,10 @@ Once you import the blender file from the repo, it will aready have the scripts 
 This section will go through the provided code so that you can understand what it is doing to capture your face.
 <br />
 <br />
-The file *OpenCVAnim.py* purely initalizes the script as well as adds an icon in the scene layout so you can easily begin capturing your webcam for the purporse of animation, the meat of the code lies in *OpenCVAnimOperator.py*.
+The file *Animation.py* purely initalizes the script as well as adds an icon in the scene layout so you can easily begin capturing your webcam for the purporse of animation, the meat of the code lies in *AnimationRunner.py*.
 <br />
 <br />
-*OpenCVAnimOperator.py* Uses a class, OpenCVAnimOperator, which contains all of the necessary functions. It starts by assigning variables for the blender icon, the rig name, predictor dataset, the facial detector, the model points, and the camera matrix. If you wanted to use this script for other rigged models, you would need to change the rig name and the model points to match with the model you would like to use.
+*AnimationRunner.py* Uses a class, OpenCVAnimOperator, which contains all of the necessary functions. It starts by assigning variables for the blender icon, the rig name, predictor dataset, the facial detector, the model points, and the camera matrix. If you wanted to use this script for other rigged models, you would need to change the rig name and the model points to match with the model you would like to use.
 
 ### Functions
 
@@ -49,5 +49,6 @@ The smooth value function keeps a running average of the length value between po
 ##### Get Range
 Get range compresses distance values between 0 and 1 so that you can keep movements between a particular range and avoid unnatural facial expressions by points moving too far away from each other.
 ##### Modal
-The modal function is where all the work for animating the face lies. It starts with 2 event handlers checking if the animation program is supposed to be running, if it isn't the window closes and the program stops, but if it is then it continues with the function.
+The modal function is where all the work for animating the face lies. It starts with 2 event handlers checking if the animation program is supposed to be running, if it isn't the window closes and the program stops, but if it is then it continues with the function. For each of the frames capturing the face, the program saves the needed landmarks to an array to be altered. The program then grabs the rotation vector and first angle of each of the points. You then go through all of the "bones" in the model and changes and smooths the displacement to match the expression from the webcam. Finally it marks each landmark on the webcam with a dot so that the user can see what points are being tracked for the animation.
 ##### MISC. Functions
+The rest of the functions handle the initalization and exit of the program so that when the user accesses the program teh popup window showing the camera opens and closes as needed.
