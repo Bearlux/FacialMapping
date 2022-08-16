@@ -30,4 +30,5 @@ Once you import the python scripts using the open scripbutton on the top of the 
 *OpenCVAnimOperator.py* points to the *file shape_predictor_68_face_landmarks.dat* wherever you have it saved on your system. Then make sure the 
 rig_name variable matches the name of your object in the scene graph.
 <br />
+<br />
 **You are now ready to start animation using your webcam capture**
