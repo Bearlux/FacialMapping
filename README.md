@@ -11,7 +11,7 @@ import sys
 sys.path
 ```
 
-![sys.path](images/img3.PNG)
+![sys.path](images/img3.png)
 
 <hr />
 
