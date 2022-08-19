@@ -60,19 +60,19 @@ The code above is from *Animation-Snow.py*. You'll notice that the names of the 
 
 The smooth value function keeps a running average of the length value between points. This smooths out the movement of the animated face so that it looks less choppy and more natural.
 
-![smooth-value](images/img4.png)
+![smooth-value](images/img4.PNG)
 
 ##### Get Range
 
 Get range compresses distance values between 0 and 1 so that you can keep movements between a particular range and avoid unnatural facial expressions by points moving too far away from each other.
 
-![get-range](images/img5.png)
+![get-range](images/img5.PNG)
 
 ##### Modal
 
 The modal function is where all the work for animating the face lies. It starts with 2 event handlers checking if the animation program is supposed to be running, if it isn't the window closes and the program stops, but if it is then it continues with the function.
 
-![modal](images/img6.png)
+![modal](images/img6.PNG)
 
 ##### MISC. Functions
 
